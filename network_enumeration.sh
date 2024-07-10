@@ -7,7 +7,7 @@ done
 
 echo "---------------Eternal Blue-------------------------------  "
 echo "------------------------------------------------------------"
-msfconsole -q -x "use auxiliary/scanner/smb/smb_ms17_010;set threads 200;set rhost file://port_445.txt;run;exit;" | grep "Host is likely VULNERABLE to MS17-010! " | cut -d  ' ' -f 2 | tee eternal_blue
+msfconsole -q -x "use auxiliary/scanner/smb/smb_ms17_010;set threads 200;set rhost file://port_445.txt;run;exit;" | grep "Host is likely VULNERABLE to MS17-010! " | cut -d ' ' -f 2 | tee eternal_blue
 #AnonymousLogin
 
 echo "---------------Anonymous Login-------------------------------  "
