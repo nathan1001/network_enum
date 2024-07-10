@@ -22,7 +22,7 @@ echo "Anonymous Login Check Completed"
 ########################################################################################################################################################################################################################################################################################################################
 
 #BlueKeep
-echo "Blue Keep Check Started "
+echo "Blue Keep Check Started"
 echo "---------------Blue Keep-------------------------------"
 echo "------------------------------------------------------------"
 msfconsole -q -x "use auxiliary/scanner/rdp/cve_2019_0708_bluekeep;set threads 200;set rhost file://port_3389.txt;run;exit;"| grep "The target is vulnerable"|cut -d " " -f 2| tee blue_keep
@@ -30,12 +30,12 @@ echo "Blue Keep Check Completed "
 
 ########################################################################################################################################################################################################################################################################################################################
 #RDP
- 
-echo "---------------NLA-------------------------------  "
+echo "RDP NLA Check Started"
+echo "---------------NLA-------------------------------"
 echo "------------------------------------------------------------"
-msfconsole -q -x "use auxiliary/scanner/rdp/rdp_scanner;set threads 200;set rhost file://port_3389.txt;run;exit;" | grep -a "Requires NLA: No" | cut -d " "  -f 2 | cut -d ":"  -f 1 |tee nla
+msfconsole -q -x "use auxiliary/scanner/rdp/rdp_scanner;set threads 200;set rhost file://port_3389.txt;run;exit;" | grep -a "Requires NLA: No" | cut -d " " -f 2 | cut -d ":" -f 1 |tee nla
 ##cat nla | grep -a "Requires NLA: No" | cut -d " "  -f 2 | tee nla
-
+########################################################################################################################################################################################################################################################################################################################
 echo "----------------------Default Credentials --------------------------------------"
 hydra -l Administrator -p 'P@ssw0rd' -M nla rdp -o rdp_default_credentials.txt 
 #ncrack -user  Administrator -pass P@ssw0rd -p rdp -iL port_3389.txt -v
