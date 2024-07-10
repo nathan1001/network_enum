@@ -5,9 +5,12 @@ do
     cat $1 | grep Host: |grep $x | cut -d ' ' -f 2 > port_$x.txt
 done
 
+cat("Eternal Blue Check Started ")
 echo "---------------Eternal Blue-------------------------------  "
 echo "------------------------------------------------------------"
 msfconsole -q -x "use auxiliary/scanner/smb/smb_ms17_010;set threads 200;set rhost file://port_445.txt;run;exit;" | grep "Host is likely VULNERABLE to MS17-010! " | cut -d ' ' -f 2 | tee eternal_blue
+cat("Eternal Blue Complete")
+
 #AnonymousLogin
 
 echo "---------------Anonymous Login-------------------------------  "
