@@ -5,7 +5,7 @@ This script processes the output of an Nmap scan to perform various security che
 
 ## Usage
 
-```sh
+ ```sh
 ./network_enumeration.sh <nmap_output_file> --check <all|ports|eternalblue|anonymous|bluekeep|rdp|defaultcreds|httpmethods|kyocera|sslscan|cisco>
 ```
 
