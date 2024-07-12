@@ -6,19 +6,19 @@ This script processes the output of an Nmap scan to perform various security che
 ## Usage
 
 ```sh
-./script.sh <nmap_output_file> --check <all|ports|eternalblue|anonymous|bluekeep|rdp|defaultcreds|httpmethods|kyocera|sslscan|cisco>
+./network_enumeration.sh <nmap_output_file> --check <all|ports|eternalblue|anonymous|bluekeep|rdp|defaultcreds|httpmethods|kyocera|sslscan|cisco>
 ```
 
 ### Examples
 
 - Run all checks:
   ```sh
-  ./script.sh nmap_output.txt --check all
+  ./network_enumeration.sh nmap_output.txt --check all
   ```
 
 - Run only the Eternal Blue check:
   ```sh
-  ./script.sh nmap_output.txt --check eternalblue
+  ./network_enumeration.sh nmap_output.txt --check eternalblue
   ```
 
 ## Checks
