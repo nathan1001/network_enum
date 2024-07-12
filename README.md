@@ -1,5 +1,3 @@
-Sure, here's a `README.md` file for your script:
-
 ```markdown
 # Nmap Post-Processing Script
 
